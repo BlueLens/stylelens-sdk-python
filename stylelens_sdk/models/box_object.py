@@ -34,17 +34,17 @@ class BoxObject(object):
         'box': 'BoxArray',
         'class_code': 'str',
         'class_name': 'str',
-        'images': 'ProductsArray'
+        'products': 'list[Product]'
     }
 
     attribute_map = {
         'box': 'box',
         'class_code': 'class_code',
         'class_name': 'class_name',
-        'images': 'images'
+        'products': 'products'
     }
 
-    def __init__(self, box=None, class_code=None, class_name=None, images=None):
+    def __init__(self, box=None, class_code=None, class_name=None, products=None):
         """
         BoxObject - a model defined in Swagger
         """
@@ -52,7 +52,7 @@ class BoxObject(object):
         self._box = None
         self._class_code = None
         self._class_name = None
-        self._images = None
+        self._products = None
 
         if box is not None:
           self.box = box
@@ -60,8 +60,8 @@ class BoxObject(object):
           self.class_code = class_code
         if class_name is not None:
           self.class_name = class_name
-        if images is not None:
-          self.images = images
+        if products is not None:
+          self.products = products
 
     @property
     def box(self):
@@ -127,25 +127,25 @@ class BoxObject(object):
         self._class_name = class_name
 
     @property
-    def images(self):
+    def products(self):
         """
-        Gets the images of this BoxObject.
+        Gets the products of this BoxObject.
 
-        :return: The images of this BoxObject.
-        :rtype: ProductsArray
+        :return: The products of this BoxObject.
+        :rtype: list[Product]
         """
-        return self._images
+        return self._products
 
-    @images.setter
-    def images(self, images):
+    @products.setter
+    def products(self, products):
         """
-        Sets the images of this BoxObject.
+        Sets the products of this BoxObject.
 
-        :param images: The images of this BoxObject.
-        :type: ProductsArray
+        :param products: The products of this BoxObject.
+        :type: list[Product]
         """
 
-        self._images = images
+        self._products = products
 
     def to_dict(self):
         """
