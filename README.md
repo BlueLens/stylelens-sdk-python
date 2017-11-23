@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *FeedApi* | [**get_feeds**](docs/FeedApi.md#get_feeds) | **GET** /feeds | 
 *ObjectApi* | [**get_objects**](docs/ObjectApi.md#get_objects) | **POST** /objects | Query to search multiple objects
+*ProductApi* | [**get_product_by_hostcode_and_product_no**](docs/ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 *ProductApi* | [**get_products**](docs/ProductApi.md#get_products) | **POST** /products | Query to search products
 
 
@@ -81,6 +82,7 @@ Class | Method | HTTP request | Description
  - [GetFeedResponse](docs/GetFeedResponse.md)
  - [GetObjectsResponse](docs/GetObjectsResponse.md)
  - [GetObjectsResponseData](docs/GetObjectsResponseData.md)
+ - [GetProductResponse](docs/GetProductResponse.md)
  - [GetProductsResponse](docs/GetProductsResponse.md)
  - [Product](docs/Product.md)
  - [ProductsArray](docs/ProductsArray.md)

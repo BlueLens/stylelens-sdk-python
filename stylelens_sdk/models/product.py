@@ -47,7 +47,8 @@ class Product(object):
         'main_image_mobile_full': 'str',
         'main_image_mobile_thumb': 'str',
         'sizes': 'list[str]',
-        'discount_rate': 'int'
+        'discount_rate': 'int',
+        'version': 'str'
     }
 
     attribute_map = {
@@ -67,10 +68,11 @@ class Product(object):
         'main_image_mobile_full': 'main_image_mobile_full',
         'main_image_mobile_thumb': 'main_image_mobile_thumb',
         'sizes': 'sizes',
-        'discount_rate': 'discount_rate'
+        'discount_rate': 'discount_rate',
+        'version': 'version'
     }
 
-    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sizes=None, discount_rate=None):
+    def __init__(self, id=None, name=None, host_code=None, host_url=None, host_name=None, tags=None, class_code=None, price=None, currency_unit=None, product_url=None, product_no=None, nation=None, main_image=None, main_image_mobile_full=None, main_image_mobile_thumb=None, sizes=None, discount_rate=None, version=None):
         """
         Product - a model defined in Swagger
         """
@@ -92,6 +94,7 @@ class Product(object):
         self._main_image_mobile_thumb = None
         self._sizes = None
         self._discount_rate = None
+        self._version = None
 
         if id is not None:
           self.id = id
@@ -127,6 +130,8 @@ class Product(object):
           self.sizes = sizes
         if discount_rate is not None:
           self.discount_rate = discount_rate
+        if version is not None:
+          self.version = version
 
     @property
     def id(self):
@@ -490,6 +495,27 @@ class Product(object):
         """
 
         self._discount_rate = discount_rate
+
+    @property
+    def version(self):
+        """
+        Gets the version of this Product.
+
+        :return: The version of this Product.
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this Product.
+
+        :param version: The version of this Product.
+        :type: str
+        """
+
+        self._version = version
 
     def to_dict(self):
         """

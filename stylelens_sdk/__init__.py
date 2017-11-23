@@ -20,6 +20,7 @@ from .models.boxes_array import BoxesArray
 from .models.get_feed_response import GetFeedResponse
 from .models.get_objects_response import GetObjectsResponse
 from .models.get_objects_response_data import GetObjectsResponseData
+from .models.get_product_response import GetProductResponse
 from .models.get_products_response import GetProductsResponse
 from .models.product import Product
 from .models.products_array import ProductsArray

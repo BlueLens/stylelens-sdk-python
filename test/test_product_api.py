@@ -31,6 +31,14 @@ class TestProductApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_get_product_by_hostcode_and_product_no(self):
+        """
+        Test case for get_product_by_hostcode_and_product_no
+
+        Get Product by hostCode and productNo
+        """
+        pass
+
     def test_get_products(self):
         """
         Test case for get_products

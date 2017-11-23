@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **main_image_mobile_thumb** | **str** | Mobile thumbnail size of image url | [optional] 
 **sizes** | **list[str]** |  | [optional] 
 **discount_rate** | **int** |  | [optional] 
+**version** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

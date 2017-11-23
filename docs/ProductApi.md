@@ -4,8 +4,59 @@ All URIs are relative to *http://api.stylelens.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_product_by_hostcode_and_product_no**](ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 [**get_products**](ProductApi.md#get_products) | **POST** /products | Query to search products
 
+
+# **get_product_by_hostcode_and_product_no**
+> GetProductResponse get_product_by_hostcode_and_product_no(host_code, product_no)
+
+Get Product by hostCode and productNo
+
+Returns Product belongs to a Host and productNo
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_sdk
+from stylelens_sdk.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_sdk.ProductApi()
+host_code = 'host_code_example' # str | 
+product_no = 'product_no_example' # str | 
+
+try: 
+    # Get Product by hostCode and productNo
+    api_response = api_instance.get_product_by_hostcode_and_product_no(host_code, product_no)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_product_by_hostcode_and_product_no: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **host_code** | **str**|  | 
+ **product_no** | **str**|  | 
+
+### Return type
+
+[**GetProductResponse**](GetProductResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_products**
 > GetProductsResponse get_products(file=file)
