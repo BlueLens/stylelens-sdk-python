@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_feeds**
-> GetFeedResponse get_feeds()
+> GetFeedResponse get_feeds(offset=offset, limit=limit)
 
 
 
@@ -24,17 +24,23 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = stylelens_sdk.FeedApi()
+offset = 56 # int |  (optional)
+limit = 56 # int |  (optional)
 
 try: 
     # 
-    api_response = api_instance.get_feeds()
+    api_response = api_instance.get_feeds(offset=offset, limit=limit)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FeedApi->get_feeds: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
 
 ### Return type
 

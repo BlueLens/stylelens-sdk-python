@@ -149,6 +149,108 @@ class ProductApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
+    def get_product_by_id(self, product_id, **kwargs):
+        """
+        Find Product by ID
+        Returns a single Product
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_product_by_id(product_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str product_id: ID of Product to return (required)
+        :return: GetProductResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.get_product_by_id_with_http_info(product_id, **kwargs)
+        else:
+            (data) = self.get_product_by_id_with_http_info(product_id, **kwargs)
+            return data
+
+    def get_product_by_id_with_http_info(self, product_id, **kwargs):
+        """
+        Find Product by ID
+        Returns a single Product
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_product_by_id_with_http_info(product_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str product_id: ID of Product to return (required)
+        :return: GetProductResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['product_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_product_by_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'product_id' is set
+        if ('product_id' not in params) or (params['product_id'] is None):
+            raise ValueError("Missing the required parameter `product_id` when calling `get_product_by_id`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'product_id' in params:
+            path_params['productId'] = params['product_id']
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/products/{productId}', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='GetProductResponse',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def get_products(self, **kwargs):
         """
         Query to search products
@@ -238,6 +340,115 @@ class ProductApi(object):
         auth_settings = []
 
         return self.api_client.call_api('/products', 'POST',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='GetProductsResponse',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def get_products_by_image_id_and_object_id(self, image_id, object_id, **kwargs):
+        """
+        Get Products by imageId and objectId
+        Returns Products belongs to a imageId and objectId
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_products_by_image_id_and_object_id(image_id, object_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str image_id:  (required)
+        :param int object_id:  (required)
+        :return: GetProductsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.get_products_by_image_id_and_object_id_with_http_info(image_id, object_id, **kwargs)
+        else:
+            (data) = self.get_products_by_image_id_and_object_id_with_http_info(image_id, object_id, **kwargs)
+            return data
+
+    def get_products_by_image_id_and_object_id_with_http_info(self, image_id, object_id, **kwargs):
+        """
+        Get Products by imageId and objectId
+        Returns Products belongs to a imageId and objectId
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_products_by_image_id_and_object_id_with_http_info(image_id, object_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str image_id:  (required)
+        :param int object_id:  (required)
+        :return: GetProductsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['image_id', 'object_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_products_by_image_id_and_object_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'image_id' is set
+        if ('image_id' not in params) or (params['image_id'] is None):
+            raise ValueError("Missing the required parameter `image_id` when calling `get_products_by_image_id_and_object_id`")
+        # verify the required parameter 'object_id' is set
+        if ('object_id' not in params) or (params['object_id'] is None):
+            raise ValueError("Missing the required parameter `object_id` when calling `get_products_by_image_id_and_object_id`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'image_id' in params:
+            path_params['imageId'] = params['image_id']
+        if 'object_id' in params:
+            path_params['objectId'] = params['object_id']
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/products/images/{imageId}/objects/{objectId}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

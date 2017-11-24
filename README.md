@@ -52,10 +52,12 @@ from stylelens_sdk.rest import ApiException
 from pprint import pprint
 # create an instance of the API class
 api_instance = stylelens_sdk.FeedApi()
+offset = 56 # int |  (optional)
+limit = 56 # int |  (optional)
 
 try:
     # 
-    api_response = api_instance.get_feeds()
+    api_response = api_instance.get_feeds(offset=offset, limit=limit)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FeedApi->get_feeds: %s\n" % e)
@@ -71,7 +73,9 @@ Class | Method | HTTP request | Description
 *FeedApi* | [**get_feeds**](docs/FeedApi.md#get_feeds) | **GET** /feeds | 
 *ObjectApi* | [**get_objects**](docs/ObjectApi.md#get_objects) | **POST** /objects | Query to search multiple objects
 *ProductApi* | [**get_product_by_hostcode_and_product_no**](docs/ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
+*ProductApi* | [**get_product_by_id**](docs/ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 *ProductApi* | [**get_products**](docs/ProductApi.md#get_products) | **POST** /products | Query to search products
+*ProductApi* | [**get_products_by_image_id_and_object_id**](docs/ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
 
 
 ## Documentation For Models

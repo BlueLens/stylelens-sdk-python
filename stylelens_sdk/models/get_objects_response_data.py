@@ -31,22 +31,27 @@ class GetObjectsResponseData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'boxes': 'BoxesArray'
+        'boxes': 'BoxesArray',
+        'image_id': 'str'
     }
 
     attribute_map = {
-        'boxes': 'boxes'
+        'boxes': 'boxes',
+        'image_id': 'image_id'
     }
 
-    def __init__(self, boxes=None):
+    def __init__(self, boxes=None, image_id=None):
         """
         GetObjectsResponseData - a model defined in Swagger
         """
 
         self._boxes = None
+        self._image_id = None
 
         if boxes is not None:
           self.boxes = boxes
+        if image_id is not None:
+          self.image_id = image_id
 
     @property
     def boxes(self):
@@ -68,6 +73,27 @@ class GetObjectsResponseData(object):
         """
 
         self._boxes = boxes
+
+    @property
+    def image_id(self):
+        """
+        Gets the image_id of this GetObjectsResponseData.
+
+        :return: The image_id of this GetObjectsResponseData.
+        :rtype: str
+        """
+        return self._image_id
+
+    @image_id.setter
+    def image_id(self, image_id):
+        """
+        Sets the image_id of this GetObjectsResponseData.
+
+        :param image_id: The image_id of this GetObjectsResponseData.
+        :type: str
+        """
+
+        self._image_id = image_id
 
     def to_dict(self):
         """

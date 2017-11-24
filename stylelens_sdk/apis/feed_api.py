@@ -54,6 +54,8 @@ class FeedApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param int offset: 
+        :param int limit: 
         :return: GetFeedResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,12 +81,14 @@ class FeedApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param int offset: 
+        :param int limit: 
         :return: GetFeedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['offset', 'limit']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -100,11 +104,16 @@ class FeedApi(object):
             params[key] = val
         del params['kwargs']
 
+
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
 
         header_params = {}
 

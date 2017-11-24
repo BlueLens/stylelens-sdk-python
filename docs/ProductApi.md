@@ -5,7 +5,9 @@ All URIs are relative to *http://api.stylelens.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_product_by_hostcode_and_product_no**](ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
+[**get_product_by_id**](ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 [**get_products**](ProductApi.md#get_products) | **POST** /products | Query to search products
+[**get_products_by_image_id_and_object_id**](ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
 
 
 # **get_product_by_hostcode_and_product_no**
@@ -42,6 +44,54 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **host_code** | **str**|  | 
  **product_no** | **str**|  | 
+
+### Return type
+
+[**GetProductResponse**](GetProductResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_product_by_id**
+> GetProductResponse get_product_by_id(product_id)
+
+Find Product by ID
+
+Returns a single Product
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_sdk
+from stylelens_sdk.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_sdk.ProductApi()
+product_id = 'product_id_example' # str | ID of Product to return
+
+try: 
+    # Find Product by ID
+    api_response = api_instance.get_product_by_id(product_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_product_by_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **str**| ID of Product to return | 
 
 ### Return type
 
@@ -102,6 +152,56 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_products_by_image_id_and_object_id**
+> GetProductsResponse get_products_by_image_id_and_object_id(image_id, object_id)
+
+Get Products by imageId and objectId
+
+Returns Products belongs to a imageId and objectId
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_sdk
+from stylelens_sdk.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_sdk.ProductApi()
+image_id = 'image_id_example' # str | 
+object_id = 56 # int | 
+
+try: 
+    # Get Products by imageId and objectId
+    api_response = api_instance.get_products_by_image_id_and_object_id(image_id, object_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_products_by_image_id_and_object_id: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **image_id** | **str**|  | 
+ **object_id** | **int**|  | 
+
+### Return type
+
+[**GetProductsResponse**](GetProductsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
