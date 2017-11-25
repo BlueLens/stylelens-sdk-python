@@ -31,11 +31,11 @@ class TestObjectApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_objects(self):
+    def test_get_objects_by_image_file(self):
         """
-        Test case for get_objects
+        Test case for get_objects_by_image_file
 
-        Query to search multiple objects
+        Query to search objects and products
         """
         pass
 

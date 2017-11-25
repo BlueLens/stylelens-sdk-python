@@ -40,9 +40,9 @@ class ObjectApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def get_objects(self, **kwargs):
+    def get_objects_by_image_file(self, file, **kwargs):
         """
-        Query to search multiple objects
+        Query to search objects and products
         
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -50,25 +50,25 @@ class ObjectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_objects(callback=callback_function)
+        >>> thread = api.get_objects_by_image_file(file, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param file file: Image file to upload (only support jpg format yet)
+        :param file file: Image file to upload (only support jpg format yet) (required)
         :return: GetObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.get_objects_with_http_info(**kwargs)
+            return self.get_objects_by_image_file_with_http_info(file, **kwargs)
         else:
-            (data) = self.get_objects_with_http_info(**kwargs)
+            (data) = self.get_objects_by_image_file_with_http_info(file, **kwargs)
             return data
 
-    def get_objects_with_http_info(self, **kwargs):
+    def get_objects_by_image_file_with_http_info(self, file, **kwargs):
         """
-        Query to search multiple objects
+        Query to search objects and products
         
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -76,11 +76,11 @@ class ObjectApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_objects_with_http_info(callback=callback_function)
+        >>> thread = api.get_objects_by_image_file_with_http_info(file, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param file file: Image file to upload (only support jpg format yet)
+        :param file file: Image file to upload (only support jpg format yet) (required)
         :return: GetObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -97,10 +97,13 @@ class ObjectApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_objects" % key
+                    " to method get_objects_by_image_file" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'file' is set
+        if ('file' not in params) or (params['file'] is None):
+            raise ValueError("Missing the required parameter `file` when calling `get_objects_by_image_file`")
 
 
         collection_formats = {}

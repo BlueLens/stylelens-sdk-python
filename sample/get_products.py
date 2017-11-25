@@ -7,11 +7,10 @@ from pprint import pprint
 api_instance = stylelens_sdk.ProductApi()
 # product = stylelens_sdk.Product() # Product | Product object that needs to be added to the db.
 
-file = '/Users/bok95/Desktop/img.jpg'
 
 
 try:
-    api_response = api_instance.get_products(file=file)
+    api_response = api_instance.get_products(product_id='5a13a939247c1a00017051ef')
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductApi->get_products: %s\n" % e)

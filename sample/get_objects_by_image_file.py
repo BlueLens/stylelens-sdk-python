@@ -12,7 +12,7 @@ file = '/Users/bok95/Desktop/img.jpg'
 
 
 try:
-    api_response = api_instance.get_objects(file=file)
+    api_response = api_instance.get_objects_by_image_file(file=file)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProductApi->get_objects: %s\n" % e)
+    print("Exception when calling ProductApi->get_objects_by_image_fil: %s\n" % e)
