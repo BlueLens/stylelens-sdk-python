@@ -39,6 +39,14 @@ class TestObjectApi(unittest.TestCase):
         """
         pass
 
+    def test_get_objects_by_product_id(self):
+        """
+        Test case for get_objects_by_product_id
+
+        Query to search multiple objects
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

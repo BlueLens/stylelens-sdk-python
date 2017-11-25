@@ -34,6 +34,7 @@ class BoxObject(object):
         'box': 'BoxArray',
         'class_code': 'str',
         'class_name': 'str',
+        'score': 'float',
         'products': 'list[Product]'
     }
 
@@ -41,10 +42,11 @@ class BoxObject(object):
         'box': 'box',
         'class_code': 'class_code',
         'class_name': 'class_name',
+        'score': 'score',
         'products': 'products'
     }
 
-    def __init__(self, box=None, class_code=None, class_name=None, products=None):
+    def __init__(self, box=None, class_code=None, class_name=None, score=None, products=None):
         """
         BoxObject - a model defined in Swagger
         """
@@ -52,6 +54,7 @@ class BoxObject(object):
         self._box = None
         self._class_code = None
         self._class_name = None
+        self._score = None
         self._products = None
 
         if box is not None:
@@ -60,6 +63,8 @@ class BoxObject(object):
           self.class_code = class_code
         if class_name is not None:
           self.class_name = class_name
+        if score is not None:
+          self.score = score
         if products is not None:
           self.products = products
 
@@ -125,6 +130,27 @@ class BoxObject(object):
         """
 
         self._class_name = class_name
+
+    @property
+    def score(self):
+        """
+        Gets the score of this BoxObject.
+
+        :return: The score of this BoxObject.
+        :rtype: float
+        """
+        return self._score
+
+    @score.setter
+    def score(self, score):
+        """
+        Sets the score of this BoxObject.
+
+        :param score: The score of this BoxObject.
+        :type: float
+        """
+
+        self._score = score
 
     @property
     def products(self):

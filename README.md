@@ -72,6 +72,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *FeedApi* | [**get_feeds**](docs/FeedApi.md#get_feeds) | **GET** /feeds | 
 *ObjectApi* | [**get_objects**](docs/ObjectApi.md#get_objects) | **POST** /objects | Query to search multiple objects
+*ObjectApi* | [**get_objects_by_product_id**](docs/ObjectApi.md#get_objects_by_product_id) | **GET** /objects/products/{productId} | Query to search multiple objects
 *ProductApi* | [**get_product_by_hostcode_and_product_no**](docs/ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 *ProductApi* | [**get_product_by_id**](docs/ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 *ProductApi* | [**get_products**](docs/ProductApi.md#get_products) | **POST** /products | Query to search products
