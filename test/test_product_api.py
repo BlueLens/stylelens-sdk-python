@@ -51,6 +51,14 @@ class TestProductApi(unittest.TestCase):
         """
         Test case for get_products
 
+        Get Products by productId
+        """
+        pass
+
+    def test_get_products_by_image_file(self):
+        """
+        Test case for get_products_by_image_file
+
         Query to search products
         """
         pass

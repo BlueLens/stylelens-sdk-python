@@ -6,7 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_product_by_hostcode_and_product_no**](ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 [**get_product_by_id**](ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
-[**get_products**](ProductApi.md#get_products) | **POST** /products | Query to search products
+[**get_products**](ProductApi.md#get_products) | **GET** /products | Get Products by productId
+[**get_products_by_image_file**](ProductApi.md#get_products_by_image_file) | **GET** /products/images | Query to search products
 [**get_products_by_image_id_and_object_id**](ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
 
 
@@ -109,7 +110,59 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_products**
-> GetProductsResponse get_products(file=file)
+> GetProductsResponse get_products(product_id, offset=offset, limit=limit)
+
+Get Products by productId
+
+Returns similar Products with productId
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import stylelens_sdk
+from stylelens_sdk.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = stylelens_sdk.ProductApi()
+product_id = 'product_id_example' # str | 
+offset = 56 # int |  (optional)
+limit = 56 # int |  (optional)
+
+try: 
+    # Get Products by productId
+    api_response = api_instance.get_products(product_id, offset=offset, limit=limit)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ProductApi->get_products: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **str**|  | 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
+
+### Return type
+
+[**GetProductsResponse**](GetProductsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_products_by_image_file**
+> GetProductsResponse get_products_by_image_file(file=file)
 
 Query to search products
 
@@ -129,10 +182,10 @@ file = '/path/to/file.txt' # file | Image file to upload (only support jpg forma
 
 try: 
     # Query to search products
-    api_response = api_instance.get_products(file=file)
+    api_response = api_instance.get_products_by_image_file(file=file)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ProductApi->get_products: %s\n" % e)
+    print("Exception when calling ProductApi->get_products_by_image_file: %s\n" % e)
 ```
 
 ### Parameters
