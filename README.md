@@ -76,7 +76,7 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**get_product_by_hostcode_and_product_no**](docs/ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 *ProductApi* | [**get_product_by_id**](docs/ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 *ProductApi* | [**get_products**](docs/ProductApi.md#get_products) | **GET** /products | Get Products by productId
-*ProductApi* | [**get_products_by_image_file**](docs/ProductApi.md#get_products_by_image_file) | **GET** /products/images | Query to search products
+*ProductApi* | [**get_products_by_image_file**](docs/ProductApi.md#get_products_by_image_file) | **POST** /products/images | Query to search products
 *ProductApi* | [**get_products_by_image_id_and_object_id**](docs/ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
 
 

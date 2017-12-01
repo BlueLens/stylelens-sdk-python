@@ -449,7 +449,7 @@ class ProductApi(object):
         # Authentication setting
         auth_settings = []
 
-        return self.api_client.call_api('/products/images', 'GET',
+        return self.api_client.call_api('/products/images', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,

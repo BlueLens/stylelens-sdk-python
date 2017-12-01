@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**get_product_by_hostcode_and_product_no**](ProductApi.md#get_product_by_hostcode_and_product_no) | **GET** /products/hosts/{hostCode}/products/{productNo} | Get Product by hostCode and productNo
 [**get_product_by_id**](ProductApi.md#get_product_by_id) | **GET** /products/{productId} | Find Product by ID
 [**get_products**](ProductApi.md#get_products) | **GET** /products | Get Products by productId
-[**get_products_by_image_file**](ProductApi.md#get_products_by_image_file) | **GET** /products/images | Query to search products
+[**get_products_by_image_file**](ProductApi.md#get_products_by_image_file) | **POST** /products/images | Query to search products
 [**get_products_by_image_id_and_object_id**](ProductApi.md#get_products_by_image_id_and_object_id) | **GET** /products/images/{imageId}/objects/{objectId} | Get Products by imageId and objectId
 
 
